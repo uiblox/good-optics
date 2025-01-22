@@ -15,14 +15,13 @@ const calculateRangeValue = (oldMin, oldMax, newMin, newMax, oldValue) => {
 function calcParallax () {
   const scrollTop = window.scrollY;
   parallaxTarget.forEach(target => {
-    console.log("target", target)
+    const heroText = target.nextElementSibling
     if ((scrollTop + window.innerHeight / 2) > target.offsetTop) {
-      
       const oldMin = (target.offsetTop < window.innerHeight / 2) ? target.offsetTop : target.offsetTop - window.innerHeight / 2;
       const oldMax = oldMin + target.offsetHeight;
-      const yPosition = calculateRangeValue(oldMin, oldMax, 0, 50, scrollTop)
-
+      const yPosition = calculateRangeValue(oldMin, oldMax, 0, -50, scrollTop)
       target.style.backgroundPosition = `center ${yPosition}px`
+      heroText.style.transform = `translateY(${-yPosition/2}px)`
     }
   })
 
