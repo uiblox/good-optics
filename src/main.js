@@ -30,3 +30,30 @@ import throttle from 'lodash.throttle'
 // window.addEventListener('scroll', throttle(calcParallax, 50))
 
 // transform: translate3d(0px, 13.8365%, 0px)
+// Images peices
+// data-speed="-0.25"
+// data-speed="-0.2"
+// data-speed="0.4"
+// data-speed="0.3"
+// data-speed="0.5"
+
+//Headline
+// data-speed="0.1"
+
+const moving = document.querySelectorAll('.tsw-move')
+
+const headLine = document.querySelector('headline')
+const header = document.querySelector('header')
+
+let headerHeight = header.offsetHeight
+
+let scroll = window.scrollY;
+
+moving.forEach((el) => {
+    let speed = el.dataset.speed
+
+    el.computedStyleMap.transform = `translateY(${scroll * speed}px)`
+
+})
+
+headLine.style.opacity = -scroll / (headerHeight / 2) + 1
