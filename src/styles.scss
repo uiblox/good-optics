@@ -11,62 +11,69 @@ p {
 }
 
 
-.tsw-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
+.tsw-parallax-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300;
+
+    .tsw-intro {
+        background-color: cyan;
+        height: 100vh;
+    }
+
+    .tsw-exit {
+        background-color: rgb(200, 248, 129);
+        height: 100vh;
+    }
+
+    .tsw-text-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            font-size: 100px;
+            color: aliceblue;
+        } 
+    }
+    
+    .tsw-parallax-group {
+        position: relative;
+        height: 100vh;
+        transform-style: preserve-3d;
+    }
+
+    .tsw-parallax-layer {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.base-layer {
+            transform: translateZ(-300px);
+        }
+    }
+    
+    #intro {
+
+    }
+
+    #group1 {
+        .base-layer {
+            background-color: crimson;
+        }
+    }
+
+    #group2 {
+        .mid-layer {
+            background-color: cadetblue;
+        }
+    }
+
+    #exit {
+
+    }
 }
 
-.tsw-container_height--500 {
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-}
-
-.tsw-container_height--700 {
-    height: 700px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-}
-
-.tsw-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-}
-
-.tsw-parallax {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-size: cover;
-    background-position: center 0;
-    width: 100%;
-    height: 130%;
-    background-repeat: no-repeat;
-    transition: 0.3s;
-}
-
-.tsw-parallax-text {
-    font-size: 100px;
-    font-weight: bold;
-    color: white;
-}
-
-.image1 {
-    background-image: url('https://picsum.photos/id/563/3872/2592');
-}
-
-.image2 {
-    background-image: url('https://picsum.photos/id/514/3872/2592');
-}
- 
