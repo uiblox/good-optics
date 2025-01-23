@@ -1,79 +1,34 @@
-* {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
 }
 
-p {
-    margin: 0;
-}
-
-
-.tsw-parallax-wrapper {
+img {
+    width: 100%;
+    display: block;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 300;
-
-    .tsw-intro {
-        background-color: cyan;
-        height: 100vh;
-    }
-
-    .tsw-exit {
-        background-color: rgb(200, 248, 129);
-        height: 100vh;
-    }
-
-    .tsw-text-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-            font-size: 100px;
-            color: aliceblue;
-        } 
-    }
-    
-    .tsw-parallax-group {
-        position: relative;
-        height: 100vh;
-        transform-style: preserve-3d;
-    }
-
-    .tsw-parallax-layer {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        &.base-layer {
-            transform: translateZ(-300px);
-        }
-    }
-    
-    #intro {
-
-    }
-
-    #group1 {
-        .base-layer {
-            background-color: crimson;
-        }
-    }
-
-    #group2 {
-        .mid-layer {
-            background-color: cadetblue;
-        }
-    }
-
-    #exit {
-
-    }
+    position: relative;
+    object-fit: contain;
 }
 
+.tile-1 {
+    height: 200vh;
+    pointer-events: none;
+}
+
+.inner-1 {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    object-fit: contain;
+    background: white;
+}
+
+.tile-2 {
+    margin-top: -100vh;
+    background: black;
+
+}
+
+.tile-3 {
+    background: black;
+}
